@@ -6,11 +6,12 @@ import Nomination from './Componenets/Nominations';
 function App() {
   return (
     <div>
-      <header>
+      <header className="title">
         <h1>
           The Shoppies
         </h1>
       </header>
+      <hr></hr>
       <Search/>
       <Results/>
       <Nomination/>
