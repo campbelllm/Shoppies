@@ -12,9 +12,11 @@ function App() {
         </h1>
       </header>
       <hr></hr>
+      <div class="main">
       <Search/>
       <Results/>
       <Nomination/>
+      </div>
     </div>
   );
 }
