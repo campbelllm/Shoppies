@@ -1,10 +1,11 @@
 import React from 'react';
+import {Main} from './nominationsSC'
 
 function Nominations () {
   return(
-    <div>
+    <Main>
       <h1>Nominations</h1>
-    </div>
+    </Main>
   )
 }
 
