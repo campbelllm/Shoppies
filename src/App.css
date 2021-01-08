@@ -17,6 +17,7 @@ html,body{
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin: 40px 60px;
 }
 
 .title {

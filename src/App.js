@@ -12,7 +12,7 @@ function App() {
         </h1>
       </header>
       <hr></hr>
-      <div class="main">
+      <div className="main">
       <Search/>
       <Results/>
       <Nomination/>

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
+
 export const Main = styled.div`
-  width: 80%;
+  width: 100%;
   border-radius: 5px;
   border: 1px solid white;
   padding: 20px;
@@ -17,6 +18,7 @@ export const SearchBar = styled.input`
   border: solid 1px white;
   padding: 10px;
   position: absolute;
+  justify-self: center;
 `
 
 export const SearchButton = styled.button`
