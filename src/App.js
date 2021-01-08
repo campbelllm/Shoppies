@@ -6,7 +6,7 @@ import Results from "./Componenets/Results";
 import Nomination from "./Componenets/Nominations";
 
 function App() {
-  const [movieResults, setMovieResults] = useState(null);
+  const [movieResults, setMovieResults] = useState([]);
   const updateMovieResults = arr => {
     setMovieResults(arr)
   }

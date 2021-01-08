@@ -17,9 +17,8 @@ function Search () {
   const handleClick = async (e) =>  {
     await axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=8afc9050&s=${inputValue}`)
     .then(res => {
-     const data = res.data.Search.map(movie => [movie.Title, movie.Year ])
-    setMovies(data)
-     
+      const data = res.data.Search.map((movie) => {return ({Title: movie.Title, Year: movie.Year})})
+      setMovies(data)
     })
   }
   updateMovieResults(movies)
