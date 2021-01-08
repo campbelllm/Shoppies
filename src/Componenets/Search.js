@@ -1,24 +1,30 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
+import MovieContext from '../MovieContext';
 import {Main, SearchBar, SearchButton} from './searchSC'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios';
-function Search (setMovieResults) {
+
+function Search () {
+  let { updateMovieResults } = useContext(MovieContext);
   const [inputValue, setInputValue] = useState('')
-  const [moviesFiltered, setMoviesFiltered] = useState('')
+  const [movies, setMovies] = useState([])
+  // let movies = []
   function handleChange (e) {
     setInputValue(e.target.value)
   }
 
-  function handleClick (e) {
-    axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=8afc9050&s=${inputValue}`)
+  const handleClick = async (e) =>  {
+    await axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=8afc9050&s=${inputValue}`)
     .then(res => {
-      const movies = res.data.Search.map(movie => [movie.Title, movie.Year ])
-      setMoviesFiltered(movies)
-      console.log(movies)
+     const data = res.data.Search.map(movie => [movie.Title, movie.Year ])
+    setMovies(data)
+     
     })
-    setMovieResults(moviesFiltered)
   }
+  updateMovieResults(movies)
+ 
+ 
   return(
       <Main>
       <h2>Search</h2>

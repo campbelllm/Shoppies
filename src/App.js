@@ -1,24 +1,27 @@
-import React, {useState} from 'react';
-import './App.css';
-import Search from './Componenets/Search';
-import Results from './Componenets/Results';
-import Nomination from './Componenets/Nominations';
+import React, { useState } from "react";
+import "./App.css";
+import MovieContext from "./MovieContext";
+import Search from "./Componenets/Search";
+import Results from "./Componenets/Results";
+import Nomination from "./Componenets/Nominations";
 
 function App() {
-  const [movieResults, setMovieResults] = useState('');
-
+  const [movieResults, setMovieResults] = useState(null);
+  const updateMovieResults = arr => {
+    setMovieResults(arr)
+  }
   return (
     <div>
       <header className="title">
-        <h1>
-          The Shoppies
-        </h1>
+        <h1>The Shoppies</h1>
       </header>
       <hr></hr>
       <div className="main">
-      <Search setMovieResults={setMovieResults}/>
-      <Results movieResults={movieResults}/>
-      <Nomination/>
+        <MovieContext.Provider value={{movieResults, updateMovieResults}} >
+          <Search  />
+          <Results />
+          <Nomination />
+        </MovieContext.Provider>
       </div>
     </div>
   );
