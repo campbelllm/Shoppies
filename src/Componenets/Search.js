@@ -3,9 +3,9 @@ import {Main, SearchBar, SearchButton} from './searchSC'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import axios from 'axios';
-function Search () {
+function Search (setMovieResults) {
   const [inputValue, setInputValue] = useState('')
-
+  const [moviesFiltered, setMoviesFiltered] = useState('')
   function handleChange (e) {
     setInputValue(e.target.value)
   }
@@ -13,10 +13,11 @@ function Search () {
   function handleClick (e) {
     axios.get(`http://www.omdbapi.com/?i=tt3896198&apikey=8afc9050&s=${inputValue}`)
     .then(res => {
-      console.log(e.target.value)
-      console.log(res.data)
-      setInputValue('')
+      const movies = res.data.Search.map(movie => [movie.Title, movie.Year ])
+      setMoviesFiltered(movies)
+      console.log(movies)
     })
+    setMovieResults(moviesFiltered)
   }
   return(
       <Main>

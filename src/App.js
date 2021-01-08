@@ -1,9 +1,12 @@
+import React, {useState} from 'react';
 import './App.css';
 import Search from './Componenets/Search';
 import Results from './Componenets/Results';
 import Nomination from './Componenets/Nominations';
 
 function App() {
+  const [movieResults, setMovieResults] = useState('');
+
   return (
     <div>
       <header className="title">
@@ -13,8 +16,8 @@ function App() {
       </header>
       <hr></hr>
       <div className="main">
-      <Search/>
-      <Results/>
+      <Search setMovieResults={setMovieResults}/>
+      <Results movieResults={movieResults}/>
       <Nomination/>
       </div>
     </div>
