@@ -9,7 +9,6 @@ function Search () {
   let { updateMovieResults } = useContext(MovieContext);
   const [inputValue, setInputValue] = useState('')
   const [movies, setMovies] = useState([])
-  // let movies = []
   function handleChange (e) {
     setInputValue(e.target.value)
   }
