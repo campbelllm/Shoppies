@@ -8,3 +8,11 @@ export const Main = styled.div`
   margin: 10px;
   font-size: 18px;
 `
+
+export const NominationList = styled.ol`
+  margin: 20px;
+  & li{
+    margin-top: 10px;
+    color: white
+  }
+`

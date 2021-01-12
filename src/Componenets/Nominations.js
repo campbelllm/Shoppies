@@ -1,15 +1,21 @@
-import React, { useContext} from 'react';
-import {Main} from './nominationsSC';
-import NominationContext from '../NominationContext';
+import React, { useContext } from "react";
+import { Main, NominationList } from "./nominationsSC";
+import NominationContext from "../NominationContext";
 
-function Nominations () {
+function Nominations() {
   const { nominations } = useContext(NominationContext);
+  console.log(nominations);
 
-  return(
+  return (
     <Main>
       <h1>Nominations</h1>
+      <NominationList>
+        {nominations.map((movie) => (
+          <li>{movie.title}, {movie.year}</li>
+        ))}
+      </NominationList>
     </Main>
-  )
+  );
 }
 
 export default Nominations;
