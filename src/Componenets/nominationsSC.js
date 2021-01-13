@@ -16,3 +16,9 @@ export const NominationList = styled.ol`
     color: white
   }
 `
+
+export const RemoveButton = styled.button`
+  background-color: white;
+  color: black;
+  cursor: pointer;
+`

@@ -6,9 +6,10 @@ import { Main, MovieList, NominateButton } from "./resultsSC";
 function Results() {
   const { movieResults } = useContext(MovieContext);
   const { nominations, setNominations } = useContext(NominationContext);
-  
+  const { disable, setDisable } = useState(false)
   const handleClick = (title, year) => {
     setNominations([...nominations, { title, year }]);
+    // movieResults.map((movie) => (movie.Title === title? setDisable(true): null))
   };
  
   return (
@@ -18,14 +19,14 @@ function Results() {
         {movieResults.map((movie) => (
           <div>
             <li>
-              <strong>Movie Title:</strong> {movie.Title}{" "}
-              <strong>Release Year:</strong> {movie.Year}{" "}
+              <strong>Movie Title:</strong> {movie.Title}
+              <strong>Release Year:</strong> {movie.Year}
             </li>
             <NominateButton
+              disabled = {disable}
               onClick={() => handleClick(movie.Title, movie.Year)}
             >
-              {" "}
-              Nominate{" "}
+              Nominate
             </NominateButton>
           </div>
         ))}

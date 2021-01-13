@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import MovieContext from "./MovieContext";
 import NominationContext from "./NominationContext";
+import Header from './Componenets/Header'
 import Search from "./Componenets/Search";
 import Results from "./Componenets/Results";
 import Nomination from "./Componenets/Nominations";
@@ -14,9 +15,7 @@ function App() {
   };
   return (
     <div>
-      <header className="title">
-        <h1>The Shoppies</h1>
-      </header>
+      <Header/>
       <hr></hr>
       <div className="main">
         <MovieContext.Provider value={{ movieResults, updateMovieResults }}>
