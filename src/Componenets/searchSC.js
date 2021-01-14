@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export const Main = styled.div`
   height: 10%;
-  width: 100%;
+  width: 90%;
   border-radius: 5px;
   border: 1px solid white;
   padding: 20px;
@@ -18,6 +18,7 @@ export const SearchBar = styled.input`
   background: transparent;
   border: solid 1px white;
   padding: 10px;
+  margin: 20px;
   position: absolute;
   justify-self: center;
 `
@@ -27,7 +28,8 @@ export const SearchButton = styled.button`
     background: transparent;
     cursor: pointer;
     position: relative;
-    left: 96%;
+    left: 88%;
+    top: 22px;
     margin: 5px 0px;
     font-size: 20px;
 `

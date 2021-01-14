@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Main = styled.div`
-  width: 43%;
+  width: 40%;
   height: 400px;
   border-radius: 5px;
   border: 1px solid white;
@@ -9,6 +9,7 @@ export const Main = styled.div`
   margin: 10px;
   font-size: 18px;
   overflow: scroll;
+  box-shadow: 1px 1px 13px 0.2px #000;
 `
 
 export const MovieList = styled.ol`
@@ -19,7 +20,11 @@ export const MovieList = styled.ol`
 `
 
 export const NominateButton = styled.button`
+  font-weight: bold;
   background-color: white;
   color: black;
   cursor: pointer;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
 `

@@ -18,6 +18,7 @@ function App() {
       <Header/>
       <div className="main">
         <h4 className ="scroll"> ^ Scroll to Nominate ^ </h4>
+        <h1 className ="description"> Nominate 5 of your favorite movies to win The Shoppies award!</h1>
         <MovieContext.Provider value={{ movieResults, updateMovieResults }}>
           <NominationContext.Provider
             value={{ nominations, setNominations }}

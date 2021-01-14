@@ -20,7 +20,7 @@ function Results() {
           <div>
             <li>
               <strong>Movie Title:</strong> {movie.Title}
-              <strong>Release Year:</strong> {movie.Year}
+              <strong>Released:</strong> {movie.Year}
             </li>
             <NominateButton
               // disabled = {disable}

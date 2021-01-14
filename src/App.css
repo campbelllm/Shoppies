@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   font-family: "Quicksand", sans-serif;
-  color: white;
+  color: black;
 }
 
 html,
@@ -13,13 +13,13 @@ body {
 
 .main {
   width: 100%;
-  background-image: linear-gradient(30deg, transparent 89%, #fff 37%),
-    linear-gradient(-30deg, transparent 89%, #fff 37%),
-    linear-gradient(to bottom, #ccc, #000);
+  background: linear-gradient(30deg, transparent 89%, white 37%),
+    linear-gradient(-30deg, #ccc 89%, transparent 37%);
+    /* linear-gradient(to bottom, #ccc, #000); */
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   position: sticky;
   height: 100vh;
@@ -27,8 +27,13 @@ body {
 }
 
 .scroll {
+  width: 100%;
+  text-align: center;
   color: black;
   position: relative;
   bottom: 160px;
-  margin: 0 auto;
+}
+
+.description {
+  color: black;
 }
