@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 
 export const Main = styled.div`
+  height: 10%;
   width: 100%;
   border-radius: 5px;
   border: 1px solid white;

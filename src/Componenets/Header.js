@@ -8,11 +8,9 @@ function Header  () {
     <Main>
      <Stars/>
       <Title>
-      
       THE SHOPPIES
-      
-      
       </Title>
+     
     </Main>
   )
 }
