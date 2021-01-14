@@ -23,7 +23,7 @@ function Results() {
               <strong>Release Year:</strong> {movie.Year}
             </li>
             <NominateButton
-              disabled = {disable}
+              // disabled = {disable}
               onClick={() => handleClick(movie.Title, movie.Year)}
             >
               Nominate
