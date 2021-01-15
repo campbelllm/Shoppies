@@ -4,19 +4,19 @@ import NominationContext from "../NominationContext";
 
 function Nominations() {
   const { nominations, setNominations } = useContext(NominationContext);
-
-  const handleClick = (movie) => {
+  // nominations.length = 5;
+  const handleClick = (movie, year) => {
     const filteredMovies = nominations.filter((movieName) => 
-      (movie !== movieName.title)
+      (movie !== movieName.title || year !== movieName.year)
     )
     setNominations(filteredMovies)
   };
 
-  useEffect(() => {
-    if(nominations.length > 5){
-      return false
-    }
-  },[nominations])
+  // useEffect(() => {
+  //   if(nominations.length = 5){
+  //     return false
+  //   }
+  // }, [nominations])
   return (
     <Main>
       <h1>Nominations</h1>
@@ -26,7 +26,7 @@ function Nominations() {
             <li>
               {movie.title}, {movie.year}
             </li>
-            <RemoveButton onClick={() => handleClick(movie.title)}>Remove</RemoveButton>
+            <RemoveButton onClick={() => handleClick(movie.title, movie.year)}>Remove</RemoveButton>
           </div>
         ))}
       </NominationList>

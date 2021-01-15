@@ -14,7 +14,7 @@ https://github.com/campbelllm/shoppies
 
 Link to hosted site:
 
-
+https://lindsey-smith-the-shoppies.herokuapp.com/
 
 Preview of site:
 
