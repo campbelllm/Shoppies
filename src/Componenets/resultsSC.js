@@ -27,4 +27,10 @@ export const NominateButton = styled.button`
   padding: 10px;
   border-radius: 5px;
   border: 1px solid black;
+  &:disabled,
+button[disabled]{
+  border: 1px solid #999999;
+  background-color: black;
+  color: #666666;
+}
 `

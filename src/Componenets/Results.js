@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState, useRef } from "react";
 import MovieContext from "../MovieContext";
 import NominationContext from "../NominationContext";
 import { Main, MovieList, NominateButton } from "./resultsSC";
@@ -6,11 +6,13 @@ import { Main, MovieList, NominateButton } from "./resultsSC";
 function Results() {
   const { movieResults } = useContext(MovieContext);
   const { nominations, setNominations } = useContext(NominationContext);
-  const { disable, setDisable } = useState('true')
-  const handleClick = (title, year) => {
+
+  const handleClick = (e,title, year) => {
+    console.log ("CLASSNAME", e.target.className)
     setNominations([...nominations, { title, year }]);
-    // setDisable('true');
-    // movieResults.map((movie) => (movie.Title === title? setDisable(true): null))
+    if (e.target.className){
+      e.target.setAttribute("disabled", "disabled");
+    }
   };
  
   return (
@@ -18,14 +20,14 @@ function Results() {
       <h1>Results</h1>
       <MovieList>
         {movieResults.map((movie) => (
+          
           <div>
             <li>
               <strong>Movie Title:</strong> {movie.Title}
               <strong>Released:</strong> {movie.Year}
             </li>
             <NominateButton
-              disabled = {disable}
-              onClick={() => handleClick(movie.Title, movie.Year)}
+              onClick={(e) => handleClick(e,movie.Title, movie.Year)}
             >
               Nominate
             </NominateButton>
