@@ -8,6 +8,7 @@ export const Main = styled.div`
   padding: 20px;
   margin: 10px;
   font-size: 18px;
+  overflow: scroll;
 `
 
 export const NominationList = styled.ol`
@@ -16,7 +17,6 @@ export const NominationList = styled.ol`
     margin-top: 10px;
   }
 `
-
 export const RemoveButton = styled.button`
   font-weight: bold;
   background-color: white;
@@ -26,4 +26,12 @@ export const RemoveButton = styled.button`
   border-radius: 5px;
   border: 1px solid black;
 `
-
+export const Banner = styled.div`
+    height: 30px;
+    width: 60px;
+    background: green;
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    z-index: 10;
+`

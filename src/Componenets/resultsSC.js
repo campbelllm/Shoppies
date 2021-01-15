@@ -16,6 +16,7 @@ export const MovieList = styled.ol`
   margin: 20px;
   & li{
     margin-top: 10px;
+    line-height: 1.5em;
   }
 `
 
