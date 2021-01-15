@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Main, NominationList, RemoveButton } from "./nominationsSC";
 import NominationContext from "../NominationContext";
 
@@ -11,7 +11,12 @@ function Nominations() {
     )
     setNominations(filteredMovies)
   };
-  
+
+  useEffect(() => {
+    if(nominations.length > 5){
+      return false
+    }
+  },[nominations])
   return (
     <Main>
       <h1>Nominations</h1>
